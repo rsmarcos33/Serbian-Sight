@@ -1,0 +1,39 @@
+package com.model;
+
+import lombok.*;
+
+import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "product_id")
+    private Long id;
+    @Column(unique = true)
+    @Size(min = 5, message = "*Name must have at least 5 characters")
+    @NotNull
+    private String name;
+    @Column
+    @Size(min = 10, message = "*Name must have at least 10 characters")
+    @NonNull
+    private String description;
+    @Column
+    @Min(value = 0, message = "*Quantity has to be non negative number")
+    private Integer quantity;
+    @Column
+    @NotNull(message = "Price cannot be 0")
+    @DecimalMin(value = "0.00", message = "*Price has to be non negative number")
+    private BigDecimal price;
+
+
+}
