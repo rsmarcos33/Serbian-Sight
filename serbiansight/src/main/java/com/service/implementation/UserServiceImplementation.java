@@ -6,12 +6,13 @@ import com.repository.UserRepository;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.Optional;
 
-@Service
+
 public class UserServiceImplementation implements UserService {
 
     @Autowired
