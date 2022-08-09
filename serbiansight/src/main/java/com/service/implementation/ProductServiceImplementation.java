@@ -10,10 +10,13 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.Optional;
 
-@AllArgsConstructor
 public class ProductServiceImplementation implements ProductService {
     @Autowired
     private final ProductRepository productRepository;
+
+    public ProductServiceImplementation(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     @Override
     public Optional<Product> findById(Long id) {

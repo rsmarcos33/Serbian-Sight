@@ -10,9 +10,7 @@ import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
+@Table(name="products")
 public class Product {
 
     @Id
@@ -35,5 +33,46 @@ public class Product {
     @DecimalMin(value = "0.00", message = "*Price has to be non negative number")
     private BigDecimal price;
 
+    public Product() {
+    }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 }

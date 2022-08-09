@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class Travel {
+public class ProductController {
 
-    @RequestMapping("/travel")
-    public ModelAndView travel () {
+    @RequestMapping("/product")
+    public ModelAndView signup(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("travel");
+        modelAndView.setViewName("product");
         return modelAndView;
     }
 }

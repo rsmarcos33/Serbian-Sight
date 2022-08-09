@@ -3,13 +3,16 @@ package com.util;
 import com.model.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.domain.Page;
 
-@Data
-@AllArgsConstructor
 public class Pager {
 
     private final Page<Product> products;
+
+    public Pager(Page<Product> products) {
+        this.products = products;
+    }
 
     public int getPageIndex() {
         return products.getNumber() + 1;
