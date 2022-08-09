@@ -7,9 +7,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Collection;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
+@Table(name="roles")
 public class Role {
 
     @Id
@@ -22,7 +20,30 @@ public class Role {
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "roles")
     private Collection<User> users;
 
+    public Role() {
+    }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public Collection<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Collection<User> users) {
+        this.users = users;
+    }
 }
